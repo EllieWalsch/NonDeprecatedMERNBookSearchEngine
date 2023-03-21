@@ -3,8 +3,6 @@
 // https://www.apollographql.com/docs/apollo-server/migration/#gql-tag
 export default `
   type Query {
-    "All saved 📚 for logged in user"
-    books: [Book!]!
     currentUser: User
   }
 
@@ -16,14 +14,14 @@ export default `
     # https://stackoverflow.com/questions/50189364/shouldnt-the-login-be-a-query-in-graphql/50190570#50190570
     "Login with username and password"
     login(username: String!, password: String!): CreateUserLoginResponse!
-    "Save a 📚 for logged in user"
+    "Save a 📖 for logged in user"
     saveBook(book: BookInput!): Book!
-    "Remove a 📚 for logged in user"
+    "Remove a 📖 for logged in user"
     removeBook(bookId: ID!): Book!
   }
 
   type CreateUserLoginResponse {
-    "JWT token"
+    "JWT"
     token: ID!
   }
 
@@ -42,8 +40,9 @@ export default `
   }
 
   type User {
-    _id: ID!
+    id: ID!
     username: String!
+    books: [Book!]!
   }
 
   # There doesn't appear to be a way to DRY up this code type 📖 ☝️ 😞

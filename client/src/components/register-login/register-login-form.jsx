@@ -1,8 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useMutation } from "@apollo/client";
 
-// TODO: Allow toggling between login and register
 export default function RegisterLoginForm() {
   return (
     <Form>

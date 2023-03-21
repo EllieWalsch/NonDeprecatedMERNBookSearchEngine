@@ -9,8 +9,14 @@ export const decodeToken = (req, _, next) => {
   let decodedToken;
 
   // If there is a token, try to decode it
-  if (token) {
-    decodedToken = jwt.verify(token, config.jwt.secret);
+  try {
+    if (token) {
+      decodedToken = jwt.verify(token, config.jwt.secret);
+    }
+  } catch (err) {
+    console.error(err.message);
+
+    next();
   }
 
   // Set the user to the decoded token's data

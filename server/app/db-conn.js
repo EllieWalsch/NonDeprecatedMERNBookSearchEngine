@@ -13,6 +13,4 @@ const init = async () => {
     });
 };
 
-export const conn = mongoose.connection;
-
 export default init;
