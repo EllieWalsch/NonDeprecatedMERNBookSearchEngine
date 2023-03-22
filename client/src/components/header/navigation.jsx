@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import RegisterLogin from "./register-login/register-login";
+import RegisterLogin from "../register-login/register-login";
 
 export default function Navigation() {
   const [isShowingRegisterLogin, setIsShowingRegisterLogin] = useState(false);
