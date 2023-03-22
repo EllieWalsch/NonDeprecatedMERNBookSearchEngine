@@ -7,6 +7,9 @@ import App from "./app";
 const client = new ApolloClient({
   uri: "http://localhost:4000",
   cache: new InMemoryCache(),
+  headers: {
+    authorization: `Bearer ${localStorage.getItem("token")}`,
+  },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
